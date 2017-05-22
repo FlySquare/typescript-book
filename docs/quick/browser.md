@@ -74,19 +74,9 @@ npm run watch
 
 Şimdi eğer `ts` veya `tsx` dosyasında değişiklik yaparsanız webpack sizin için `bundle.js` dosyası oluşuturacaktır. Web sunucunuz ile bunu sunabilirsiniz.
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-## More
-If you are going to use React (which I highly recommend you give a look), here are a few more steps:
-=======
+
 ## Fazlası
 Eğer React kullanacaksanız (ki ben kesinlikle bir bakmanızı tavsiye ediyorum) yapılacak bir kaç adım daha var:
->>>>>>> 8da1b01... Update browser.md
-=======
-## Fazlası
-If you are going to use React (which I highly recommend you give a look), here are a few more steps:
-Eğer React kullanacaksanız (ki ben kesinlikle bir bakmanızı tavsiye ediyorum) yapılacak bir kaç adım daha var:
->>>>>>> b542eec... Update browser.md
 
 ```
 npm install react react-dom --save-dev
