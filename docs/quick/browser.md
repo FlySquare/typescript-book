@@ -11,7 +11,7 @@ Web uygulaması yaratmak için TypeScript kullanıyorsanız önereceklerim şunl
 mkdir proje-adi
 cd proje-adi
 ```
-* `tsconfig.json` dosyası oluşturulur. Modüllerden [burada](../project/external-modules.md) bahsedilmektedir. Bunu oluşturmanın başka bir nedeni de 'tsx' derlemesinde gerekli olduğu içindir.
+* `tsconfig.json` dosyası oluşturulur. Modülleri [ayrıca](../project/external-modules.md) tartışacağız. Bunu oluşturmanın başka bir nedeni de 'tsx' derlemesinde gerekli olduğu içindir.
 ```json
 {
     "compilerOptions": {
@@ -34,7 +34,7 @@ npm init -y
 ```
 npm install typescript@next webpack ts-loader typings --save-dev
 ```
-* Typings başlatılır. (Bir `typings.json` dosyası yaratır.).
+* Typings başlatılır (sizin için bir typings.json dosyası yaratır).
 ```
 "./node_modules/.bin/typings" init
 ```
@@ -75,7 +75,7 @@ npm run watch
 Şimdi eğer `ts` veya `tsx` dosyasında değişiklik yaparsanız webpack sizin için `bundle.js` dosyası oluşuturacaktır. Web sunucunuz ile bunu sunabilirsiniz.
 
 ## Fazlası
-Eğer React kullanacaksanız (ki ben kesinlikle bir bakmanızı tavsiye ediyorum) yapılacak bir kaç adım daha var:
+Eğer React kullanacaksanız (ki ben kesinlikle bir bakmanızı tavsiye ediyorum) yapılacak birkaç adım daha var:
 
 ```
 npm install react react-dom --save-dev
