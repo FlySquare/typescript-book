@@ -22,6 +22,9 @@ Fakat bazı terimlerin Türkçe çevrimi, cümleyi anlamsız bir hale getirebilm
 | Escape character (`\`) | Kaçış karakteri |
 | Inheritance | Kalıtım |
 | Callback | Geri çağırım |
+| Optional | İsteğe bağlı | 
+| Type | Tip |
+| Engine | Motor |
 
 # Terim açıklamaları
 * Duck Typing: Eğer bir ördek gibi yürüyor ve bir ördek gibi "vak"lıyorsa, o zaman bu bir ördektir. Bir nesne yapısal olarak tüm üyelere sahipse, diğer şeylerin de (ne olduğu önemli değil) var olduğu kabul edilir.
