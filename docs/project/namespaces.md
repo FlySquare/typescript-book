@@ -55,6 +55,6 @@ Utility.error('maybe!');
 
 })(Utility || (Utility = {}));
 ```
-Bir diğer nokta ise, uzayadları iç içe geçebilirler, bu sayede `namespace Utility.Messaging` gibi bir ifadeyle `Messaging` uzayadını `Utility` uzayadının içine tanımlamak mümkün olmaktadır.
+Bir diğer nokta ise, aduzaylarının iç içe geçebiliyor olmalarıdır, bu sayede `namespace Utility.Messaging` gibi bir ifadeyle `Messaging` aduzayını `Utility` aduzayının içerisinde tanımlamak mümkün olmaktadır.
 
 Örnek proje oluştururken veya eski JavaScript kodunu port ederken  harici modül ve `namespace` kullanımı tavsiye edilmektedir.
