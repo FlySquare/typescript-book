@@ -57,4 +57,4 @@ Utility.error('maybe!');
 ```
 Bir diğer nokta ise, aduzaylarının iç içe geçebiliyor olmalarıdır, bu sayede `namespace Utility.Messaging` gibi bir ifadeyle `Messaging` aduzayını `Utility` aduzayının içerisinde tanımlamak mümkün olmaktadır.
 
-Örnek proje oluştururken veya eski JavaScript kodunu port ederken  harici modül ve `namespace` kullanımı tavsiye edilmektedir.
+Örnek proje oluştururken veya eski JavaScript kodunu port ederken harici modül ve `namespace` kullanılması tavsiye edilmektedir.
