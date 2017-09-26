@@ -1,5 +1,5 @@
-## Namespaces
-Namespaces provide you with a convenient syntax around a common pattern used in JavaScript:
+## Aduzayları (Namespaces)
+Aduzayları, JavaScript'te kullanılan yaygın bir kalıp için uygun sözdizimi sağlar:  
 
 ```ts
 (function(something) {
@@ -8,8 +8,9 @@ Namespaces provide you with a convenient syntax around a common pattern used in 
 
 })(something || something = {})
 ```
+Basit olarak anlatmak gerekirse `something || something = {}` ifadesi, anonim fonksiyonun *varolan bir nesneye eklenti yapmasını* (`something ||` kısmı) veya *yeni bir obje yaratarak yaratılan bu yeni objeye eklenti yapılmasına* (`|| something = {}` kısmı) imkan tanır.
+Bunun anlamı şudur, bir çalıştırma sınırıyla ayrılmış iki farklı kod bloğuna sahip olabilirsiniz:
 
-Basically `something || something = {}` allows an anonymous function `function(something) {}` to *add stuff to an existing object* (the `something ||` portion) or *start a new object then add stuff to that object* (the `|| something = {}` portion). This means that you can have two such blocks split by some execution boundary :
 
 ```ts
 (function(something) {
@@ -29,8 +30,7 @@ console.log(something); // {foo:123}
 console.log(something); // {foo:123, bar:456}
 
 ```
-
-This is commonly used in  the JavaScript land for making sure that stuff doesn't leak into the global namespace. With file based modules you don't need to worry about this, but the pattern is still useful for *logical grouping* of a bunch of functions. Therefore TypeScript provides the `namespace` keyword to group these e.g.
+Javascript'te bunun en yaygın kullanım amacı global(küresel) aduzayına bilgi sızmasını önlemektir. Dosya tabanlı modüller kullanıldığında bu konu hakkında endişe etmenize gerek olmamakla birlikte, bu kalıp fonksiyonlarınızı *mantıksal olarak gruplamak* için oldukça kullanışlıdır. Bu tip gruplamaları yapabilmeniz için TypeScript `namespace` anahtar kelimesini sunmaktadır. Ör:
 
 ```ts
 namespace Utility {
@@ -46,7 +46,7 @@ namespace Utility {
 Utility.log('Call me');
 Utility.error('maybe!');
 ```
-The `namespace` keyword generates the same JavaScript that we saw earlier:
+`namespace` anahtar kelimesi ilk bölümde gördüğümüz JavaScript kodunun aynısını üretmektedir.
 
 ```ts
 (function (Utility) {
@@ -55,7 +55,6 @@ The `namespace` keyword generates the same JavaScript that we saw earlier:
 
 })(Utility || (Utility = {}));
 ```
+Bir diğer nokta ise, aduzaylarının iç içe geçebiliyor olmalarıdır, bu sayede `namespace Utility.Messaging` gibi bir ifadeyle `Messaging` aduzayını `Utility` aduzayının içerisinde tanımlamak mümkün olmaktadır.
 
-One thing to note is that namespaces can be nested so you can do stuff like `namespace Utility.Messaging` to nest a `Messaging` namespace under `Utility`.
-
-For most projects we recommend using external modules and using `namespace` for quick demos and porting old JavaScript code.
+Örnek proje oluştururken veya eski JavaScript kodunu port ederken harici modül ve `namespace` kullanılması tavsiye edilmektedir.
