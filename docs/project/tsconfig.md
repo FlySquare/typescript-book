@@ -1,12 +1,12 @@
 ### Basic
-It is extremely easy to get started with tsconfig.json as the basic file you need is:
+İhtiyacınız olan temel dosya tsconfig.json olduğundan, kullanmaya başlamak son derece kolaydır:
 ```json
 {}
 ```
-i.e. an empty JSON file at the *root* of your project. This way TypeScript will include *all* the `.ts` files in this directory (and sub directories) as a part of the compilation context. It will also select a few sane default compiler options.
+Yani projenizin *kök dizininde* boş bir JSON dosyasıdır. Bu şekilde TypeScript, derleme bağlamının bir parçası olarak bu dizindeki (ve alt dizinlerdeki) `.ts` dosyalarının *tümünü* içerecektir. Ayrıca birkaç varsayılan derleyici seçeneğini seçecektir.
 
 ### compilerOptions
-You can customize the compiler options using `compilerOptions`.
+Derleyici seçeneklerini `compilerOptions` kullanarak özelleştirebilirsiniz.
 
 ```json
 {
@@ -21,11 +21,11 @@ You can customize the compiler options using `compilerOptions`.
 }
 ```
 
-These (and more) compiler options will be discussed later.
+Bu (ve daha fazla) derleyici seçenekleri daha sonra tartışılacaktır.
 
 ### TypeScript compiler
-Good IDEs come with built in support for on the fly `ts` to `js` compilation. If however you want to run the TypeScript compiler manually from the command line when using `tsconfig.json` you can do it in a few ways.
-* Just run `tsc` and it will look for `tsconfig.json` in the current as well as all parent folders till it finds it.
-* Run `tsc -p ./path-to-project-directory`. Of course the path can be a complete or relative to the current directory.
+Modern Geliştirici Ortamları(IDE) `ts` ve `js` derlenmesi için yerleşik bir destekle birlikte gelmektedir. Ancak TypeScript derleyicisini `tsconfig.json` kullanırken komut satırından manuel olarak çalıştırmak istiyorsanız, bunu birkaç yolla yapabilirsiniz.
+* Sadece `tsc`'yi çalıştırın. Dosyayı bulana kadar tüm ana klasörlerde ve mevcut klasörde `tsconfig.json`'u arayacaktır.
+* `tsc -p ./path-to-project-directory` komutunu çalıştırın. Belirtilen yol, tam veya geçerli dizin olmalıdır.
 
-You can even start the TypeScript compiler in *watch* mode using `tsc -w` and it will watch your TypeScript project files for changes.
+Hatta TypeScript derleyicisini `tsc -w` kullanarak *watch* - *izleme* modunda başlatabilirsiniz ve bu mod, değişiklikler için TypeScript proje dosyalarınızı izleyecektir.
