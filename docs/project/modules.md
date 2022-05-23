@@ -2,38 +2,44 @@
 
 ### Global Module
 
-By default when you start typing code in a new TypeScript file your code is in a *global* namespace. As a demo consider a file `foo.ts`:
+Varsayılan olarak, yeni bir TypeScript dosyasına kod yazmaya başladığınızda, kodunuz genel bir *global* Aduzayındadır. Bir demo olarak, bir `foo.ts` dosyasını düşünün:
 
 ```ts
 var foo = 123;
 ```
 
-If you now create a *new* file `bar.ts` in the same project, you will be *allowed* by the TypeScript type system to use the variable `foo` as if it was available globally:
+Şimdi aynı projede *yeni* bir `bar.ts` dosyası oluşturursanız, TypeScript'in tür sistemi tarafından 'foo' değişkenini küresel olarak kullanmanıza *izin verir*:
 
 ```ts
-var bar = foo; // allowed
+var bar = foo; // Geçerli
 ```
 Needless to say having a global namespace is dangerous as it opens your code up for naming conflicts. We recommend using file modules which are presented next.
+Genel bir Aduzayı alanına sahip olmanın tehlikeli olduğunu söylemeye gerek yok çünkü kodunuzu isimlendirme çakışmaları için açıyor. Daha sonra sunulan dosya modüllerini kullanmanızı öneririz.
 
-### File Module
+### File Module - Dosya Modülü
 Also called *external modules*. If you have an `import` or an `export` at the root level of a TypeScript file then it creates a *local* scope within that file. So if we were to change the previous `foo.ts` to the following (note the `export` usage):
+
+Ayrıca *harici modüller* olarak da adlandırılır. TypeScript dosyasının kök düzeyinde bir `import` veya `export` işleminiz varsa, bu dosya içinde *yerel* bir kapsam oluşturur. Öyleyse, önceki `foo.ts` dosyasını aşağıdaki gibi değiştirecek olursak (`export` kullanımına dikkat edin):
 
 ```ts
 export var foo = 123;
 ```
 
-We will no longer have `foo` in the global namespace. This can be demonstrated by creating a new file `bar.ts` as follows:
+Global AdUzayı alanında artık `foo` olmayacak. Bu, aşağıdaki gibi yeni bir `bar.ts` dosyası oluşturarak gözlemlenebilir:
 
 ```ts
-var bar = foo; // ERROR: "cannot find name 'foo'"
+var bar = foo; // ERROR: "cannot find name 'foo'" - HATA: "'foo' adı bulunamıyor"
 ```
 
 If you want to use stuff from `foo.ts` in `bar.ts` *you need to explicitly import it*. This is shown in an updated `bar.ts` below:
 
+Eğer  `bar.ts` içerisinde `foo.ts` dosyasındaki bir şeyleri kullanmak istiyorsanız *açıkça içe aktarmanız gerekir*. Bu, aşağıda güncellenmiş bir `bar.ts` dosyası içerisinde gösterilmiştir:
+
 ```ts
 import {foo} from "./foo";
-var bar = foo; // allowed
+var bar = foo; // Geçerli
 ```
-Using an `import` in `bar.ts` not only allows you to bring in stuff from other files, but also marks the file `foo.ts` as a *module* and therefore `foo.ts` doesn't pollute the global namespace either.
 
-What JavaScript is generated from a given TypeScript file that uses external modules is driven by the compiler flag called `module`.
+`bar.ts` içinde bir `import` kullanmak sadece diğer dosyalardan bir şeyler çağırmanıza izin vermekle kalmaz, aynı zamanda `foo.ts` dosyasını bir *module* olarak işaretler. Bu nedenle `foo.ts` dosyası veya global AdUzayı bozulmaz. 
+
+Harici modülleri kullanan belirli bir TypeScript dosyasından oluşturulan JavaScript, `module` adlı derleyici bayrağı tarafından yönlendirilir.
